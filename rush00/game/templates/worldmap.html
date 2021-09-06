@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block screen %}
+	<span style="
+	position: absolute;
+	color: white;
+	right: 5px;
+	top: 2px;" >movieballs {{ movieballs }}</span>
+	<table style="border-collapse: collapse">
+		{% for h in map %}
+		<tr style="padding: 0; margin:0">
+			{% for w in h %}
+				<td style="padding: 0; border:none; line-height:0;">
+					<img width="{{width}}" height="{{height}}" src=
+				{% if w %}
+					"{% static 'pictures/green_pik.jpg' %}" alt="player">
+				{% else %}
+					"{% static 'pictures/green.jpg' %}" alt="green">
+				{% endif %}
+					</img>
+				</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</table>
+	{% if messages %}
+		{% for message in messages %}
+		<span style="
+		position: absolute;
+		color: white;
+		left: 5px;
+		bottom: 2px;" >{{ message }}</span>
+		{% endfor %}
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block screen %}
+<div class="center center-text">
+    <h3>
+        {{ menu_title }}
+    </h3>
+    {% block menu_content %}
+    {% endblock %}
+    <br>
+    <ol class="list-no-bullet align-left" style="padding-left: 20px">
+        {% block menu_action %}
+        {% endblock %}
+    </ol>
+</div>
+{% endblock %}

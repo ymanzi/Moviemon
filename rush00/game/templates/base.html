@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ title }}</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'style/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'style/fa.all.min.css' %}" />
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		{% block popup %}
+		{% endblock %}
+		<div class="screen">
+			{% block screen %}
+			{% endblock %}
+		</div>
+		<form name="letters" method="post" action="{{ request.path }}">
+			<div id="buttons">
+<!--				TODO add disabled attribute -->
+				<div id="direction-buttons">
+					<button {% if not 'UP' in enabled_buttons%}disabled="true" {% endif %} style="border-radius: 21px; grid-area: top" type="submit" name="UP"><i class="fa fa-arrow-alt-circle-up"></i></button>
+					<button {% if not 'DOWN' in enabled_buttons%}disabled="true" {% endif %} style="border-radius: 21px;grid-area: bottom" type="submit" name="DOWN"><i class="fa fa-arrow-alt-circle-down"></i></button>
+					<button {% if not 'LEFT' in enabled_buttons%}disabled="true" {% endif %} style="border-radius: 21px;grid-area: left" type="submit" name="LEFT"><i class="fa fa-arrow-alt-circle-left"></i></button>
+					<button {% if not 'RIGHT' in enabled_buttons%}disabled="true" {% endif %} style="border-radius: 21px;grid-area: right" type="submit" name="RIGHT"><i class="fa fa-arrow-alt-circle-right"></i></button>
+				</div>
+				<div id="ab-buttons">
+					<button {% if not 'A' in enabled_buttons%}disabled="true" {% endif %} id="button_a" type="submit" name="A" style="border-radius: 21px; width:42px; height: 42px">A</button>
+					<button {% if not 'B' in enabled_buttons%}disabled="true" {% endif %} id="button_b" type="submit" name="B" style="border-radius: 21px; width:42px; height: 42px">B</button>
+				</div>
+				<div id="ss-buttons">
+					<button {% if not 'SELECT' in enabled_buttons%}disabled="true" {% endif %} type="submit" name="SELECT">SELECT</button>
+					<button {% if not 'START' in enabled_buttons%}disabled="true" {% endif %} type="submit" name="START">START</button>
+				</div>
+			</div>
+		</form>
+
+	</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block screen %}
+<div id="movie-details">
+	<h3 width="100%">{{ title }}</h3>
+	<img src="{{ poster }}" alt="poster">
+	<ol class="text list-no-bullet align-left">
+		
+		<li>
+			<span style="text-overflow: ellipsis"><b>Movieballs:</b> {{ data.movieballs}}</span>
+		</li>
+		<li>
+			<span style="text-overflow: ellipsis"><b>Strength: </b> {{data.player_strength}}</span>
+		</li>
+		<li>
+			<span style="text-overflow: ellipsis"><b>Winning Rate: </b> {{luck}}</span>
+		</li>
+	</ol>
+    <ol class="list-no-bullet align-left">
+        <li>
+            <h5>A - Throw a movieball</h5>
+        </li>
+        <li>
+            <h5>B - Back to worldmap</h5>
+        </li>
+    </ol>
+</div>
+{% endblock %}
+
+{% block popup %}
+{% if messages %}
+<ul class="messages">
+	{% for message in messages %}
+	<li{% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block screen %}
+<div class="center center-text">
+    <h3>Moviedex</h3>
+    {% if movies|length == 0 %}
+        <h5>You have no moviemon captured</h5>
+    {% else %}
+        <ol class="fa-ul align-left">
+            {% for movie in movies %}
+            <li>
+                {% if movie.selected %}<span class="fa-li"><i class="fas fa-chevron-right"></i></span>{% endif %}
+                <h5>{{ movie.title }}
+                </h5>
+            </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    <br>
+    <ol class="list-no-bullet align-left" style="padding-left: 20px">
+        <li>
+            <h5>A - More information</h5>
+        </li>
+        <li>
+            <h5>Select - Back</h5>
+        </li>
+    </ol>
+</div>
+{% endblock %}

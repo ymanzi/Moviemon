@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block screen %}
+<div id="movie-details">
+    <h3 width="100%">{{ movie.title }}:</h3>
+    <img src="{{ movie.poster }}" alt="poster">
+    <ol class="text list-no-bullet align-left">
+        <li>
+            <span style="text-overflow: ellipsis"><b>Director:</b> {{movie.director}}</span>
+        </li>
+        <li>
+            <span style="text-overflow: ellipsis"><b>Rating:</b> {{movie.rating}}</span>
+        </li>
+        <li>
+            <span style="text-overflow: ellipsis"><b>Year:</b> {{movie.year}}</span>
+        </li>
+        <li>
+            <span style="text-overflow: ellipsis"><b>Actors:</b> {{movie.actors}}</span>
+        </li>
+        <li>
+            <span style="text-overflow: ellipsis;   overflow-x: hidden;"><b>Synopsis:</b> {{movie.synopsis}}</span>
+        </li>
+    </ol>
+    <div class="actions" style="left: 50%; margin-left: -34px;">
+        <ol class="list-no-bullet align-left" style="padding-left: 20px">
+            <li>
+                <h5>B - Back</h5>
+            </li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

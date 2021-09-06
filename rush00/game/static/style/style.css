@@ -1,0 +1,124 @@
+.screen {
+    width: 600px;
+    height: 400px;
+    border: 10px solid grey;
+    position: relative;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.center-text {
+    text-align: center;
+}
+
+.list-no-bullet {
+    list-style-type:none;
+    padding: 0;
+}
+
+.list-no-bullet li {
+    padding: 0;
+}
+
+.align-left {
+    text-align: left;
+    text-align: -moz-left;
+    text-align: -webkit-left
+}
+
+#buttons {
+    width: 600px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px;
+    grid-template-areas:
+        "tl tc tr"
+        "bl bc br";
+    margin: 10px
+}
+
+#direction-buttons {
+    grid-area: tl;
+    margin: 37px;
+    display: grid;
+    grid-template-columns: 42px 42px 42px;
+    grid-template-rows: 42px 42px 42px;
+    grid-template-areas:
+        "a top b"
+        "left c right"
+        "d bottom e";
+}
+
+#ab-buttons {
+    grid-area: tr;
+    display: grid;
+    grid-template-columns: 42px 21px 42px;
+    grid-template-rows: 21px 21px 21px;
+    margin: 63px 47px;
+}
+
+#ab-buttons button {
+    border-radius: 21px;
+    width:42px;
+    height: 42px
+}
+
+#button_a {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#button_b {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+#ss-buttons {
+    grid-area: bc;
+    text-align: center;
+    padding-top: 97px;
+}
+
+#ss-buttons button {
+    height: 25px;
+    width: 80px;
+    border-radius: 13px;
+}
+
+#movie-details {
+    padding-left: 10px;
+}
+
+#movie-details img {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    max-width: 200px;
+    max-height: 300px;
+
+}
+
+#movie-details .text {
+    max-height: 280px;
+    max-width: 375px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+.actions {
+    position: absolute;
+    bottom: 5px;
+}
